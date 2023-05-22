@@ -101,7 +101,7 @@ public class PlayerController : MonoBehaviour
             playerObject.velocity = new Vector2 (movementValueX*playerspeed, playerObject.velocity.y);
         }
 
-        isOnGround = Physics2D.OverlapCircle(groundChecker.transform.position, 0.3f, whatIsGround);
+        isOnGround = Physics2D.(groundChecker.transform.position, 0.3f, whatIsGround);
 
         if (Input.GetKeyDown(KeyCode.Space) && isOnGround == true)
         {
