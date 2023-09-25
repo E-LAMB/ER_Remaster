@@ -94,6 +94,7 @@ GameObject:
   - component: {fileID: 5298100111621806171}
   - component: {fileID: 9152139626166512471}
   - component: {fileID: 5115422569742819323}
+  - component: {fileID: 5688584943952457936}
   m_Layer: 6
   m_Name: Fence
   m_TagString: Ground
@@ -212,7 +213,22 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 7
+--- !u!114 &5688584943952457936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3810357403452399246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a187103cbf8c524f9126cdc7b80490f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player_layer:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!1 &8279130052091661391
 GameObject:
   m_ObjectHideFlags: 0

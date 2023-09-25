@@ -5,9 +5,11 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 
+    public SpriteRenderer my_render;
+
     public int normalspeed = 1;
     public float jumpforce = 1;
-    bool isOnGround = false;
+    public bool isOnGround = false;
     Animator anim;
 
     public AudioClip music;
@@ -38,6 +40,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Tracker.score = 0;
         playerObject = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
 
@@ -50,6 +53,13 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame 
     void Update()
     {
+
+        if (movementValueX != 0)
+        {
+            my_render.flipX = (movementValueX < 0f);
+        }
+
+        Tracker.player_dashing = inrush;
 
         movesInt = 0.0f;
 
@@ -101,7 +111,7 @@ public class PlayerController : MonoBehaviour
             playerObject.velocity = new Vector2 (movementValueX*playerspeed, playerObject.velocity.y);
         }
 
-        isOnGround = Physics2D.(groundChecker.transform.position, 0.3f, whatIsGround);
+        isOnGround = Physics2D.OverlapCircle(groundChecker.transform.position, 0.3f, whatIsGround);
 
         if (Input.GetKeyDown(KeyCode.Space) && isOnGround == true)
         {
